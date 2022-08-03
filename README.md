@@ -2,10 +2,10 @@
 Collection of resources
 
 
-# Thingyverse
+# ThingyVerse
 https://www.thingiverse.com/groupeffect/designs
 
-# Soundcloude
+# SoundCloud
 https://soundcloud.com/amir-yousefi-411391786
 
 # LinkedIn
