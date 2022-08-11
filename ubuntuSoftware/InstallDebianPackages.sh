@@ -19,6 +19,8 @@ apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 # PYTHON
 # apt install python3.10-venv
+# python3 -m venv proto
+# pip install docker-compose
 
 # CHROME
 # cd ~/Downloads
