@@ -18,6 +18,9 @@ echo \
 apt-get update
 apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
+# PYTHON
+# apt install python3.10-venv
+
 # CHROME
 # cd ~/Downloads
 # wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
