@@ -5,7 +5,6 @@ apt-get install \
     curl \
     gnupg \
     lsb-release \
-    code \
     terminator
 
 # DOCKER
@@ -28,3 +27,6 @@ apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 # NODE NVM
 # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+# PRIVATE
+# mkdir Projects
