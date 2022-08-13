@@ -5,7 +5,6 @@ apt-get install \
     curl \
     gnupg \
     lsb-release \
-    code \
     terminator
 
 # DOCKER
@@ -18,6 +17,11 @@ echo \
 apt-get update
 apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
+# PYTHON
+# apt install python3.10-venv
+# python3 -m venv proto
+# pip install docker-compose
+
 # CHROME
 # cd ~/Downloads
 # wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -25,3 +29,6 @@ apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 # NODE NVM
 # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+# PRIVATE
+# mkdir Projects
