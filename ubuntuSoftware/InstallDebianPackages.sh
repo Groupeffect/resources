@@ -32,3 +32,9 @@ apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 # PRIVATE
 # mkdir Projects
+
+
+# UTILS
+# apt install imagemagic
+# apt install nautilus-image-converter
+# apt install gimp inkscape blender qgis
