@@ -30,9 +30,11 @@ apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 # NODE NVM
 # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
+# JAVA
+# apt install default-jre
+
 # PRIVATE
 # mkdir Projects
-
 
 # UTILS
 # apt install imagemagic
