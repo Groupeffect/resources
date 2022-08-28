@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+
+  graphdb:
+    # https://hub.docker.com/r/ontotext/graphdb/
+    # https://graphdb.ontotext.com/documentation
+    # image: "ontotext/graphdb:9.11.2-se"
+
+    # https://hub.docker.com/r/khaller/graphdb-free
+    image: "khaller/graphdb-free"
+
+    ports:
+      - "127.0.0.1:7200:7200"
