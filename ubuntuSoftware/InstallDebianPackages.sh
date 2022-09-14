@@ -41,6 +41,3 @@ apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 # apt install nautilus-image-converter
 # apt install gimp inkscape blender qgis wmctrl
 
-## WMCTRL - interact with a EWMH/NetWM compatible X Window Manager. Resize windows with cli
-##https://wiki.ubuntuusers.de/wmctrl/
-# wmctrl -r :SELECT: -e 0,200,200,640,480 
