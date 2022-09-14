@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  dependencies:
+    build:
+      context: "./diffusers"
+      dockerfile: "dependencies"
+
+  playground:
+    build:
+      context: "./diffusers"
+      dockerfile: "Dockerfile"
+    command: 'python -m http.server 8999'
+    ports:
+      - '127.0.0.1:8999:8999'
+
+    volumes:
+      - './diffusers/app:/app'
