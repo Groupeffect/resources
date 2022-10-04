@@ -24,3 +24,8 @@ manage passwords
 `ip address`
 `nmap -Pn 0 9999`
 `man man`
+
+## Kill
+show processes
+`ps -ef | grep 'python'`
+`kill -9 <pid>`
