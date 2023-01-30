@@ -25,7 +25,7 @@ class AtomicEnv:
 
     def text(self):
         self.get_random_secret()
-        return f"'{self.key}={self.value}'"
+        return f"{self.key}={self.value}"
 
     def test(self):
         print(self.text())
