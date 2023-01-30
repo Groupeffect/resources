@@ -17,7 +17,7 @@ class AtomicEnv:
 
         for i in range(length):
             txt += txt.join(choice(chars))
-        return txt
+        return f"'{txt}'"
 
     def get_random_secret(self):
         if not self.value:
@@ -25,7 +25,7 @@ class AtomicEnv:
 
     def text(self):
         self.get_random_secret()
-        return f"{self.key}={self.value}"
+        return f"'{self.key}={self.value}'"
 
     def test(self):
         print(self.text())
@@ -81,8 +81,8 @@ class ManagedEnv:
 def help():
     print(
         """
-    #ADD GITHUB ACCESS TOKEN WITH:
-    -t <git access token>
+# ADD GITHUB ACCESS TOKEN WITH:
+# -t <git access token>
     """
     )
 

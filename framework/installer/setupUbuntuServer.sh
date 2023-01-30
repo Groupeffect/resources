@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # curl https://raw.githubusercontent.com/Groupeffect/resources/main/framework/installer/setupUbuntuServer.sh -O
+# bash ./setupUbuntuServer.sh i d up
 
 echo "Starting ubuntu server setup"
 echo """
@@ -157,8 +158,13 @@ check_python() {
 spec_file=$TASK_FOLDER_COMPGEN'specification.sh'
 groupeffect_file='groupeffect.py'
 github_resource="https://raw.githubusercontent.com/Groupeffect/resources/main/framework/utils/"$groupeffect_file
-
+env_file='.env'
 check_software() {
+
+    if [ ! -f "$env_file" ]
+        then
+            touch $env_file
+    fi
 
     if [ ! -f "$spec_file" ]
         then
@@ -166,17 +172,23 @@ check_software() {
             echo """#!/bin/bash
 
 # get utils from github
-curl $github_resource -O
-$python_path $groupeffect_file d i up
-""" > $spec_file
+for v in $""""""@
+    do
+        if [ '"""'up'"""' = $""""""v ]
+            then
+                curl $github_resource -O
+        fi
+    done
+$python_path $groupeffect_file """'-t $GITHUB_ACCESS_TOKEN > '$env_file > $spec_file
     fi
 }
+check_software
+check_python
 
 if [ $interactive_mode = "on" ]
     then
-        bash $spec_file
+        bash $spec_file up
 fi
 
+bash $spec_file
 
-check_python
-check_software
