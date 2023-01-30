@@ -155,19 +155,18 @@ check_python
 # get resources
 spec_file=$TASK_FOLDER_COMPGEN'/specification.sh'
 groupeffect_file='groupeffect.py'
-github_resource="https://github.com/Groupeffect/resources/blob/main/framework/utils/"$groupeffect_file
+github_resource="https://raw.githubusercontent.com/Groupeffect/resources/main/framework/utils/"$groupeffect_file
 check_software() {
 
     if [ ! -f "$spec_file" ]
         then
             touch $spec_file
             echo """#!/bin/bash
-python=$python_path
+
 # get utils from github
 curl $github_resource -O
-bash $groupeffect_file
-
-            """ > $spec_file
+$python_path $groupeffect_file
+""" > $spec_file
     fi
 
 }
