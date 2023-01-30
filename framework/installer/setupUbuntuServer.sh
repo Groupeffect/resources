@@ -103,12 +103,12 @@ if [ ! -d "$run_file" ]
         #!/bin/bash
         
         bash ./setupUbuntuServer.sh d
-        """ >> $run_file
+        """ > $run_file
 fi
 
 # Setup task folder
 TASK_FOLDER='./tasks/'
-TASK_FOLDER_COMPGEN=$TASK_FOLDER'/setup/'
+TASK_FOLDER_COMPGEN=$TASK_FOLDER'setup/'
 
 if [ ! -d "$TASK_FOLDER" ];
     then
@@ -154,7 +154,7 @@ check_python() {
 
 
 # get resources
-spec_file=$TASK_FOLDER_COMPGEN'/specification.sh'
+spec_file=$TASK_FOLDER_COMPGEN'specification.sh'
 groupeffect_file='groupeffect.py'
 github_resource="https://raw.githubusercontent.com/Groupeffect/resources/main/framework/utils/"$groupeffect_file
 
@@ -167,7 +167,7 @@ check_software() {
 
 # get utils from github
 curl $github_resource -O
-$python_path $groupeffect_file
+$python_path $groupeffect_file d i up
 """ > $spec_file
     fi
 }
