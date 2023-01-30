@@ -1,4 +1,5 @@
 apt update
+apt dist-upgrade
 apt-get install \
     git \
     ca-certificates \
@@ -15,7 +16,8 @@ echo \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 apt-get update
-apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+apt-get install docker.io docker-compose-plugin -y
+
 
 # PYTHON
 # apt install python3.10-venv
