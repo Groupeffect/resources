@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# curl https://raw.githubusercontent.com/Groupeffect/resources/main/framework/installer/setupUbuntuServer.sh -O
 
 echo "Starting ubuntu server setup"
 echo """
@@ -11,6 +12,11 @@ interactive_mode=i
 update_mode="off"
 debug_mode="off"
 interactive_mode="off"
+
+update() {
+    apt update && apt dist-upgrade -y
+    apt install curl git -y
+}
 
 for v in $@
     do
@@ -30,15 +36,11 @@ for v in $@
         fi
     done
 
-echo $interactive_mode
-echo $debug_mode
-echo $@
 
-update() {
-    apt update && apt dist-upgrade -y
-    apt install curl git -y
-    
-}
+echo 'interactive: '$interactive_mode
+echo 'debug: '$debug_mode
+echo 'cli params: ' $@
+
 
 checking () {
     which_x=$(which $1)
@@ -126,7 +128,7 @@ python_path=$(which python)
 install_python() {
     if [ $1 = "t"]
         then
-            echo "Check Python Setup..."
+            echo "WARNING: Check Python Setup..."
             echo $(which python)
             echo $(which python3)
         else
@@ -149,13 +151,13 @@ check_python() {
 
 }
 
-check_python
 
 
 # get resources
 spec_file=$TASK_FOLDER_COMPGEN'/specification.sh'
 groupeffect_file='groupeffect.py'
 github_resource="https://raw.githubusercontent.com/Groupeffect/resources/main/framework/utils/"$groupeffect_file
+
 check_software() {
 
     if [ ! -f "$spec_file" ]
@@ -168,10 +170,13 @@ curl $github_resource -O
 $python_path $groupeffect_file
 """ > $spec_file
     fi
-
 }
 
+if [ $interactive_mode = "on" ]
+    then
+        bash $spec_file
+fi
+
+
+check_python
 check_software
-bash $spec_file
-
-
