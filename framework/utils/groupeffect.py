@@ -2,6 +2,9 @@ from sys import argv
 from random import choice
 import string
 
+# USAGE
+# python3 groupeffect.py -t <token> -link
+
 
 class AtomicEnv:
     def __init__(self, key, value=None, length=None) -> None:
@@ -37,6 +40,10 @@ class ManagedEnv:
         self.access_token = access_token
         if not access_token:
             self.access_token = "<token>"
+
+        self.GIT_ACCESS_LINK = (
+            f"https://{self.access_token}@github.com/Groupeffect/webserver.git"
+        )
         if not params:
             self.params = [
                 AtomicEnv("SECRET_KEY", length=80),
@@ -62,7 +69,7 @@ class ManagedEnv:
                 AtomicEnv("GIT_ACCESS_TOKEN", self.access_token),
                 AtomicEnv(
                     "GIT_ACCESS_LINK",
-                    f"https://{self.access_token}@github.com/Groupeffect/webserver.git",
+                    self.GIT_ACCESS_LINK,
                 ),
             ]
 
@@ -90,14 +97,21 @@ def help():
 if __name__ == "__main__":
     has_token = False
     token_index = None
+    git_link = False
     for k, v in enumerate(argv):
         if v == "-t" and len(argv) >= k + 2:
             token_index = k + 1
             has_token = True
 
-    if has_token:
-        ManagedEnv(access_token=argv[token_index]).test()
+        elif v == "-link":
+            git_link = True
 
+    if has_token:
+        man = ManagedEnv(access_token=argv[token_index])
+        if git_link:
+            print(man.GIT_ACCESS_LINK)
+        else:
+            man.test()
     else:
         ManagedEnv().test()
         help()

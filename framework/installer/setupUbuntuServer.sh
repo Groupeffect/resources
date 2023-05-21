@@ -159,6 +159,7 @@ spec_file=$TASK_FOLDER_COMPGEN'specification.sh'
 groupeffect_file='groupeffect.py'
 github_resource="https://raw.githubusercontent.com/Groupeffect/resources/main/framework/utils/"$groupeffect_file
 env_file='.env'
+
 check_software() {
 
     if [ ! -f "$env_file" ]
@@ -191,4 +192,22 @@ if [ $interactive_mode = "on" ]
 fi
 
 bash $spec_file
+
+get_git_repository() {
+    if [ $GITHUB_REPOSITORY_URL ]
+        then 
+            git clone $GITHUB_REPOSITORY_URL
+        else
+            echo "no variable GITHUB_REPOSITORY_URL"
+    fi
+
+    if [ $GITHUB_ACCESS_TOKEN ]
+        then 
+            git clone $python_path $groupeffect_file -t $GITHUB_ACCESS_TOKEN -link
+        else
+            echo "no variable GITHUB_ACCESS_TOKEN"
+    fi
+}
+
+get_git_repository
 
