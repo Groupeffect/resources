@@ -10,7 +10,7 @@ if [ -f ../usr/etc/bash.bashrc.backup ]; then
 fi
 
 # write to bashrc file
-echo 'if [ -f ~/resources/termux/bash/.bash_aliases ]; then . ~/resources/termux/bash/.bash_aliases fi' > ../usr/etc/bash.bashrc
+echo 'if [ -f ~/resources/termux/bash/.bash_aliases ]; then . ~/resources/termux/bash/.bash_aliases fi' >> ../usr/etc/bash.bashrc
 
 
 
