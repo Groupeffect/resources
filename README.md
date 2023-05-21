@@ -1,6 +1,14 @@
 # Resources
-Collection of resources
 
+## Linux
+- https://www.linuxfromscratch.org/lfs/view/stable/
+- https://www.linuxfromscratch.org/blfs/view/stable/
+- https://debian-handbook.info/browse/de-DE/stable/sect.selinux.html
+
+## Schemas
+- https://www.w3.org/TR/rdf-schema/
+- http://obofoundry.org/
+- https://schema.org/
 
 # ThingyVerse
 https://www.thingiverse.com/groupeffect/designs
