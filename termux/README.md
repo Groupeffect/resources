@@ -13,3 +13,12 @@ Download Folder:
 
 
 Setup : `bash ~/resources/termux/bash/setup.sh`
+Manual aliases if setup fails: 
+`cp resources/termux/bash/.bash_aliases ./bash_aliases`
+Optiona A:
+`echo 'if [ -f ~/resources/termux/bash/.bash_aliases ]; then . ~/resources/termux/bash/.bash_aliases fi' >> ../usr/etc/bash.bashrc`
+Optiona B:
+`echo 'if [ -f ~/.bash_aliases ]; then . ~/.bash_aliases fi' >> ../usr/etc/bash.bashrc`
+
+
+Restart Termux app for fresh Terminal with aliases
